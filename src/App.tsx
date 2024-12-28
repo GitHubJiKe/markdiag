@@ -20,12 +20,12 @@ interface BlockProps {
 function App() {
   const [markedStr, setmarkedStr] = useState("");
   const [markdownStr, setmarkdownStr] = useState(`# Welcome to MarkDiag
-## Write Markdown
-- Structure your notes with Markdown syntax
-- Create a diagram with Markdown
-## Display Diagram
-- Convert Markdown to Diagram
-- Colorful Diagram to PNG
+## About Writing Markdown
+- Make use of Markdown syntax for structuring your notes in an organized manner.
+- Leverage Markdown to craft a diagram that is clear and visually appealing.
+## Regarding Displaying Diagrams
+- Convert Markdown into a diagram for better visualization and understanding.
+- Transform colorful diagrams into PNG format for easy sharing and storage.
 `);
   const [direction, setDirection] = useState("horizontal");
   const [data, setData] = useState<BlockProps[]>([]);
@@ -109,7 +109,6 @@ function App() {
               position: "fixed",
               bottom: 12,
               right: 12,
-              width: 100,
               gap: 12,
             }}
           >
@@ -119,10 +118,12 @@ function App() {
                   direction === "horizontal" ? "vertical" : "horizontal"
                 );
               }}
+              className="button"
             >
               {direction}
             </button>
             <button
+              className="button"
               onClick={() => {
                 navigator.clipboard.writeText(markedStr);
                 alert("copied to clipboard");
@@ -131,6 +132,7 @@ function App() {
               copy json
             </button>
             <button
+              className="button"
               onClick={() => {
                 toPng(document.querySelector(".block") as HTMLElement, {
                   cacheBust: true,

@@ -68,6 +68,20 @@ export default function Block({
           })}
         </div>
       )}
+      {level === 1 && (
+        <div
+          style={{
+            position: "relative",
+            color: "#bbb",
+            fontSize: "0.8rem",
+            top: 20,
+            textAlign: "center",
+            width: "100%",
+          }}
+        >
+          <label>@markdiag</label>
+        </div>
+      )}
     </div>
   );
 }
